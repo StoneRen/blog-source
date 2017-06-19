@@ -59,17 +59,18 @@ posts:
 ## 部署到github中
 具体怎么在github中创建blog,不在赘述.
 
+1. 安装依赖 `npm install hexo-deployer-git --save`
+2. 修改[配置](https://hexo.io/docs/deployment.html):
 
-1. 修改[配置](https://hexo.io/docs/deployment.html):
-
-```yaml
+	```yaml
 deploy:
   type: git
   repo: <repository url>
   branch: [branch]
   message: [message]
-```
-2. 填写好上面的配置后,就可以通过`hexo d`部署到制定的git仓库里了
+	```  
+  
+3. 填写好上面的配置后,就可以通过`hexo d`部署到制定的git仓库里了
 
 
 ## 问题
