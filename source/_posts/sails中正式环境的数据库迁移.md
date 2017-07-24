@@ -143,6 +143,6 @@ ALTER TABLE `user` ADD COLUMN `test` varchar(200) DEFAULT NULL;
 
 
 
-[waterline]:(https://github.com/balderdashy/waterline)
-[sailsjs中的数据迁移方式]:(https://stoneren.github.io/2017/07/21/sailsjs%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB%E6%96%B9%E5%BC%8F/)
-[mysqldiff]:(https://dev.mysql.com/doc/mysql-utilities/1.5/en/mysqldiff.html)
+[waterline]: http://github.com/balderdashy/waterline   
+[sailsjs中的数据迁移方式]:https://stoneren.github.io/2017/07/21/sailsjs%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB%E6%96%B9%E5%BC%8F/ 
+[mysqldiff]:https://dev.mysql.com/doc/mysql-utilities/1.5/en/mysqldiff.html
