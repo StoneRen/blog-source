@@ -7,7 +7,8 @@ tags:
 - alter
 - mysqldump
 ---
-
+## 目录
+[toc]
 
 在`sailsjs`中,有三种数据迁移方式: `safe`,`alter`和`drop`.在开发环境和测试环境中,直接使用`alter`会很方便的进行数据的迁移.
 
