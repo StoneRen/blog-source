@@ -1,15 +1,13 @@
 ---
 title: sails中正式环境的数据库迁移
 date: 2017-07-24 22:35:30
+top: true
 tags: 
 - sails
 - orm
 - jenkins
 - mysqldiff
 ---
-## 目录
-
-[TOC]
 
 在我的上一篇文章 [sailsjs中的数据迁移方式] 中,在结尾处埋了一个坑.当时也说了是一个妥协方案.
 
