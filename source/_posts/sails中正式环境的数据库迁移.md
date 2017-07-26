@@ -74,31 +74,31 @@ ALTER TABLE `db1`.`user`
 
 ```js
 Promise.all([getTables(), getParameters(), getViews(), getDatas()]).then(allDesc).then(diff).then(function(v) {
-			if (v.sqlUp && (program.diff == 'table' || !program.diff)) {
-				console.log('-- Database db2 needs to update the table structure:');
-				for(var k in v.sql) console.log(v.sql[k]);
-			}
-			if (v.procUp && (program.diff == 'procedure' || !program.diff)) {
-				console.log('-- Database db2 need to update the stored procedure:');
-				for(var k in v.proc) console.log(v.proc[k]);
-			}
-			if (v.funcUp && (program.diff == 'function' || !program.diff)) {
-				console.log('-- Database db2 need to update the function:');
-				for(var k in v.func) console.log(v.func[k]);
-			}
-			if (v.viewUp && (program.diff == 'view' || !program.diff)) {
-				console.log('-- Database db2 needs to update the view:');
-				for(var k in v.view) console.log(v.view[k]);
-			}
-			if (v.dataUp && program.diff && program.diff == 'data') {
-				console.log('-- Database db2 needs to update the data:');
-				for(var k in v.data) console.log(v.data[k]);
-			}
-			if (!v.sqlUp && !v.procUp && !v.funcUp && !v.viewUp && !v.dataUp)
-				console.log('-- Is the latest, do not need to update!');
-			exit();
-		});
-	}).catch(function(v){ });
+if (v.sqlUp && (program.diff == 'table' || !program.diff)) {
+  console.log('-- Database db2 needs to update the table structure:');
+  for (var k in v.sql) console.log(v.sql[k]);
+}
+if (v.procUp && (program.diff == 'procedure' || !program.diff)) {
+  console.log('-- Database db2 need to update the stored procedure:');
+  for (var k in v.proc) console.log(v.proc[k]);
+}
+if (v.funcUp && (program.diff == 'function' || !program.diff)) {
+  console.log('-- Database db2 need to update the function:');
+  for (var k in v.func) console.log(v.func[k]);
+}
+if (v.viewUp && (program.diff == 'view' || !program.diff)) {
+  console.log('-- Database db2 needs to update the view:');
+  for (var k in v.view) console.log(v.view[k]);
+}
+if (v.dataUp && program.diff && program.diff == 'data') {
+  console.log('-- Database db2 needs to update the data:');
+  for (var k in v.data) console.log(v.data[k]);
+}
+if (!v.sqlUp && !v.procUp && !v.funcUp && !v.viewUp && !v.dataUp)
+  console.log('-- Is the latest, do not need to update!');
+exit();
+});
+}).catch(function(v) {});
 ```
 使用结果如下:
 
