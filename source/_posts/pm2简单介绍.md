@@ -13,7 +13,7 @@ tags: [pm2,nodejs,jenkins,forever]
 
 `pm2 list`:
 ![pm2](http://pm2.keymetrics.io/images/pm2-list.png)
-
+<!-- more -->
 `pm2`的控制台,这部分花钱才能使用大部分功能.
 ![pm2](https://cl.ly/0M210e2E3W1L/Screen%20Recording%202017-07-26%20at%2017.20.gif)
 

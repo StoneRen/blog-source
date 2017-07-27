@@ -19,7 +19,7 @@ yarn config get registry
 ```
 
 调整为淘宝镜像
-
+<!-- more -->
 ```bash
 yarn config set registry https://registry.npm.taobao.org
 

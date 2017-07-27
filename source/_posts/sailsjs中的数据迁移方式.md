@@ -8,7 +8,6 @@ tags:
 - mysqldump
 ---
 ## 目录
-[toc]
 
 在`sailsjs`中,有三种数据迁移方式: `safe`,`alter`和`drop`.在开发环境和测试环境中,直接使用`alter`会很方便的进行数据的迁移.
 
@@ -26,7 +25,7 @@ tags:
 2. 在正式环境中,无法使用`alter`,导致在正式环境下,必须手动进行数据库的表结构修改.
 
 ## `alter`的两个问题
-
+<!-- more -->
 官方说明如下:
 
 > **Auto-migrations** - Auto-migrations should `never be enabled when connecting to a database with data you care about`. Instead, use auto-migrations with fake data, or with cached data that you can easily recreate.
@@ -34,6 +33,7 @@ tags:
 
 标注的地方,说明一下.    
 在`alter`模式下,`sails`在启动的时候,会把每一条放到内存中,然后删除并且重建数据.这就会导致下面两个问题
+
 ### 启动时间超时
 我的数据在`6000`条,网速在`1m`的情况,启动大约会有4分钟,想想就太恐怖了.当然在我的正式环境中,`10000`条数据,10秒内就可以搞定了.
 `sails`的默认超时时间是`60*1000ms`,也就是1分钟.
