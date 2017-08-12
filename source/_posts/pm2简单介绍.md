@@ -1,7 +1,7 @@
 ---
 title: pm2简单介绍
 date: 2017-07-26 17:12:31
-tags: [pm2,nodejs,jenkins,forever]
+tags: [pm2,nodejs,jenkins,forever,热更新]
 ---
 
 非常简洁的一个使用记录,没有去做深究.先挖个坑.
@@ -12,12 +12,16 @@ tags: [pm2,nodejs,jenkins,forever]
 `pm2`和`forever`一样,都可以作为nodejs的守护程序,当然不仅仅是`nodejs`.但相对比来说`pm2`的配置和图形化以及插件都做的不错.
 
 `pm2 list`:
-![pm2](http://pm2.keymetrics.io/images/pm2-list.png)
+![pm2](http://ou1djxzjh.bkt.clouddn.com/blog/image/pm2-list.png-s)
 <!-- more -->
 `pm2`的控制台,这部分花钱才能使用大部分功能.
-![pm2](https://cl.ly/0M210e2E3W1L/Screen%20Recording%202017-07-26%20at%2017.20.gif)
+![pm2](http://ou1djxzjh.bkt.clouddn.com/blog/image/pm2-web-ui.gif-s)
 
+## 安装
 
+```sh
+npm install -g pm2
+```
 
 ## pm2使用
 
@@ -35,27 +39,17 @@ pm2 start app.js  --name "api" --log-date-format "YYYY-MM-DD HH:mm Z" -e logs/ap
 ```json
 {
   "apps":[{
-    "name":"static",
-    "cwd":"/user/code/static",
+    "name":"test_api",
+    "cwd":"/root/code/test-api",
+    "args":"--port=1550",
+    "env":{
+      "NODE_ENV":"test"
+    },
     "script":"app.js",
-    "error_file": "/user/code/logs/static_err.log",
-    "out_file": "/user/code/logs/static_out.log"
-  },{
-    "name":"api",
-    "cwd":"/user/code/api",
-    "script":"app.js",
-    "error_file": "/user/code/logs/api_err.log",
-    "out_file": "/user/code/logs/api_out.log"
-  },{
-    "name":"op",
-    "cwd":"/user/code/op",
-    "script":"app.js",
-    "args":"--silent --port=1338",
-    "error_file": "/user/code/logs/op_err.log",
-    "out_file": "/user/code/logs/op_out.log"
-  }
+    "error_file": "/root/code/logs/test_api_err.log",
+    "out_file": "/root/code/logs/test_api_out.log"
+  }]
 }
-
 ```
 
 
@@ -66,6 +60,7 @@ pm2 start app.js  --name "api" --log-date-format "YYYY-MM-DD HH:mm Z" -e logs/ap
 2. pm2 中的配置,只能修改,不能删除,可能使用的extend的方式
 
 比如: 一开始我设置了`DEBUG=remind` 然后删除这个配置,再`reload`,`debug`依然为`remind`,所以只好修改为`debug=-` 这样就不会污染log了
+3. 注意一下`环境变量`和`参数`的使用方式
 
 
 ## 只启动某个app
@@ -107,5 +102,11 @@ pm2 set pm2-logrotate:workerInterval 1800
 │ workerInterval │ 1800                │
 └────────────────┴─────────────────────┘
 ```
+
+## 重启服务
+
+重启服务命令为`pm2 restart XXX`.但是这样会终端nodejs程序,导致服务终端,在程序重新启动之前就无法处理请求了.
+
+幸好,`pm2`提供了信号传递.`pm2 sendSignal SIGUSR2 XXX`,程序对信号进行处理.比如程序先fork一个子进程提供服务,然后在将子进程重启,从而达到了热更新.当然这需要程序进行一下简单的处理. 具体查看[官方文档](http://pm2.keymetrics.io/docs/usage/pm2-doc-single-page/#signals)
 
 [pm2-logrotate]:https://github.com/pm2-hive/pm2-logrotate

@@ -1,0 +1,74 @@
+---
+layout: post
+slug: "photos"
+title: "记录"
+noDate: "true"
+---
+<style>
+
+  #photo-box a {
+    font-size: 16px;
+    overflow: hidden;
+    display: inline-block;
+    margin-bottom: 8px;
+    width: calc(30% - 4px);
+    margin-right: 8px;
+  }
+
+  a:nth-of-type(2n) {
+    margin-right: 0;
+  }
+
+  @media screen and (min-width: 50em) {
+    #photo-box a {
+      width: calc(30% - 6px);
+    }
+
+    #photo-box a:nth-of-type(2n) {
+      margin-right: 8px;
+    }
+
+    #photo-box a:nth-of-type(4n) {
+      margin-right: 0;
+    }
+  }
+
+  #photo-box a:hover img {
+    transform: scale(1.15);
+  }
+
+  #photo-box figure {
+    margin: 0;
+  }
+
+  #photo-box img {
+    border: none;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    background: #ccc;
+    transition: transform .2s ease-in-out;
+  }
+
+  #photo-box .p a {
+    display: inline;
+    font-size: 13px;
+    margin: 0;
+  }
+
+  #photo-box .p {
+    text-align: center;
+    font-size: 13px;
+    padding-top: 100px;
+  }
+</style>
+<script src="https://unpkg.com/jquery@3.2.1/dist/jquery.min.js"></script>
+<script src="https://unpkg.com/lodash@4.17.4/lodash.min.js"></script>
+<script src="./data.js"></script>
+<script src="./photo.js"></script>
+
+<strong>大图杀猫,谨慎浏览,土豪随意</strong>
+<p>如果无法观看,可能被你的广告拦截给阻止了</p>
+<hr>
+<div id="photo-box">
+</div>

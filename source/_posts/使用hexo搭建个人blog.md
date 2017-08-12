@@ -64,13 +64,13 @@ posts:
 1. 安装依赖 `npm install hexo-deployer-git --save`
 2. 修改[配置](https://hexo.io/docs/deployment.html):
 
-	```yaml
+```
 deploy:
   type: git
   repo: <repository url>
   branch: [branch]
   message: [message]
-	```  
+```  
 
 
 ## 部署
