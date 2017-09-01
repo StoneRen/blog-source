@@ -1,0 +1,44 @@
+---
+layout: page
+slug: "books"
+title: "读书"
+noDate: true
+---
+<link rel="stylesheet" href="book.css">
+<script src="https://cdn.staticfile.org/vue/2.2.6/vue.min.js"></script>
+
+<p>虽然amazon没有给我广告费,但我最近读书都是从Amazon上买的.为了保证不坑大家,我都放我买书的地址.</p>
+<p>不讨论kindle和实体书的优劣,两种方式都喜爱.</p>
+
+<!--
+  不能使用 传统的那个字符 来读取 vue的变量
+  因为和ejs语法冲突了
+-->
+<div id="book-box">
+  <p v-if="!loaded">正在加载...</p>
+  <div v-if="loaded" v-for="(book,index) in books" :key="index">
+    <h2 v-if="!books[index - 1] || books[index - 1].date !== book.date" v-html="book.date"></h2>
+    <a class="photo-href" href="javascript:;">
+      <figure>
+        <img :src="qnroot+book.url+'-sm'" :alt="book.title" :data-target="qnroot+book.url+'-p'">
+      </figure>
+    </a>
+    <div class="review">
+        <p><strong v-html="book.title"></strong></p>
+        <p v-html="book.review"></p>
+    </div>
+    <div :class="'star_bg star_l'+book.star">
+      <a class="star star_1"></a>
+      <a class="star star_2"></a>
+      <a class="star star_3"></a>
+      <a class="star star_4"></a>
+      <a class="star star_5"></a>
+  </div>
+    <div class="clearfix"></div>
+    <p>
+      购买链接: <a v-for="(h,i) in book.store" target="blank" :href="h.url+'&from=jsfun.info'" v-html="h.key"></a>
+    </p>
+  </div>
+</div>
+<script src="https://unpkg.com/jquery@3.2.1/dist/jquery.min.js"></script>
+<script src="./book.js"></script>

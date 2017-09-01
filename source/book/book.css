@@ -1,0 +1,124 @@
+#book-box .photo-href {
+  font-size: 16px;
+  overflow: hidden;
+  display: inline-block;
+  margin-bottom: 8px;
+  width: calc(30% - 4px);
+  margin-right: 8px;
+}
+
+a:nth-of-type(2n) {
+  margin-right: 0;
+}
+
+@media screen and (min-width: 50em) {
+  #book-box .photo-href {
+    width: calc(30% - 6px);
+  }
+}
+
+#book-box a:hover img {
+  transform: scale(1.15);
+}
+
+#book-box figure {
+  margin: 0;
+}
+
+#book-box img {
+  border: none;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  background: #ccc;
+  transition: transform 0.2s ease-in-out;
+}
+
+#book-box .p .photo-href {
+  display: inline;
+  font-size: 13px;
+  margin: 0;
+}
+
+#book-box .p {
+  text-align: center;
+  font-size: 13px;
+  padding-top: 100px;
+}
+#book-box .review {
+  display: inline-block;
+  width: 66%;
+}
+/* 灰色背景星星5个平铺 */
+.star_bg {
+  width: 120px;
+  height: 20px;
+  background: url(star.png) repeat-x;
+  position: relative;
+  overflow: hidden;
+}
+/* 这是5个小星星们的默认状态的定位 */
+.star {
+  height: 100%;
+  width: 24px;
+  line-height: 6em;
+  position: absolute;
+  z-index: 3;
+}
+.star_1 {
+  left: 0;
+}
+.star_2 {
+  left: 24px;
+}
+.star_3 {
+  left: 48px;
+}
+.star_4 {
+  left: 72px;
+}
+.star_5 {
+  left: 96px;
+}
+
+/* 鼠标hover效果实现，分别显示背景与定宽 
+.star:hover {    
+  background: url(star.png) repeat-x 0 -20px;
+  left: 0; z-index: 2;
+}
+.star_1:hover { width: 24px; }
+.star_2:hover { width: 48px; }
+.star_3:hover { width: 72px; }
+.star_4:hover { width: 96px; }
+.star_5:hover { width: 120px; }
+*/
+.star_l1 .star_1 {
+  background: url(star.png) repeat-x 0 -20px;
+  left: 0;
+  z-index: 2;
+  width: 24px;
+}
+.star_l2 .star_2 {
+  background: url(star.png) repeat-x 0 -20px;
+  left: 0;
+  z-index: 2;
+  width: 48px;
+}
+.star_l3 .star_3 {
+  background: url(star.png) repeat-x 0 -20px;
+  left: 0;
+  z-index: 2;
+  width: 72px;
+}
+.star_l4 .star_4 {
+  background: url(star.png) repeat-x 0 -20px;
+  left: 0;
+  z-index: 2;
+  width: 96px;
+}
+.star_l5 .star_5 {
+  background: url(star.png) repeat-x 0 -20px;
+  left: 0;
+  z-index: 2;
+  width: 120px;
+}

@@ -1,0 +1,40 @@
+---
+layout: page 
+slug: "digest" 
+title: "书摘" 
+noDate: true 
+---
+<style>
+    #box h3 {
+        margin: 0;
+    }
+    .digest-time {
+        font-size: 10px;
+    }
+</style>
+<script src="https://cdn.staticfile.org/vue/2.2.6/vue.min.js"></script>
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<p>不定期上传我自己的kindle书摘.<span style="color:#333c0c;font-size:12px;">由于直接读取kindle数据,没有整理,所以标注的准确度不能保证</span></p>
+<!--
+  不能使用 传统的那个字符 来读取 vue的变量
+  因为和ejs语法冲突了
+-->
+<div id="box">
+    <p>
+        <button @click="random()" v-html="'点击看随机书摘('+count+'条)'"></button> &nbsp;&nbsp;&nbsp;&nbsp;
+        <button onclick="location.href='/digest/kindle.txt'" v-html="'查看全部书摘('+oData.length+'条)'">全部书摘</button>
+    </p>
+    <div v-if="show">
+        <div v-for="(item,index) in dData">
+            <h3 v-html="item.title"></h3>
+            <span class="digest-time" v-html="item.date"></span>
+            <p v-html="item.content"></p>
+        </div>
+        <p>
+                <button @click="random()" v-html="'点击看随机书摘('+count+'条)'"></button> &nbsp;&nbsp;&nbsp;&nbsp;
+                <button onclick="location.href='/digest/kindle.txt'" v-html="'查看全部书摘('+oData.length+'条)'">全部书摘</button>
+            </p>
+    </div>
+</div>
+
+<script src="./digest.js"></script>

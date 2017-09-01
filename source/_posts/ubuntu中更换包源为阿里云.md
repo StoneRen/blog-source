@@ -1,9 +1,10 @@
 ---
 title: ubuntu中本地化配置
-date: 2017-08-16 23:46:02
+date: 2017-08-27 23:46:02
 tags: [ubuntu,aliyun,apt,hans,zh_CN,utf-8]
 ---
 
+主要是两个配置: 1. 修改软件源 2. 支持中文
 
 ## 修改软件包源
 

@@ -1,12 +1,10 @@
----
-layout: post
-slug: "photos"
-title: "记录"
-noDate: "true"
+layout: post 
+slug: "photos" 
+title: "记录" 
+noDate: "true" 
 ---
 <style>
-
-  #photo-box a {
+  #photo-box .photo-href {
     font-size: 16px;
     overflow: hidden;
     display: inline-block;
@@ -15,24 +13,11 @@ noDate: "true"
     margin-right: 8px;
   }
 
-  a:nth-of-type(2n) {
-    margin-right: 0;
-  }
-
   @media screen and (min-width: 50em) {
-    #photo-box a {
+    #photo-box .photo-href {
       width: calc(30% - 6px);
     }
-
-    #photo-box a:nth-of-type(2n) {
-      margin-right: 8px;
-    }
-
-    #photo-box a:nth-of-type(4n) {
-      margin-right: 0;
-    }
   }
-
   #photo-box a:hover img {
     transform: scale(1.15);
   }
@@ -40,7 +25,6 @@ noDate: "true"
   #photo-box figure {
     margin: 0;
   }
-
   #photo-box img {
     border: none;
     max-width: 100%;
@@ -50,7 +34,7 @@ noDate: "true"
     transition: transform .2s ease-in-out;
   }
 
-  #photo-box .p a {
+  #photo-box .p .photo-href {
     display: inline;
     font-size: 13px;
     margin: 0;
@@ -61,14 +45,22 @@ noDate: "true"
     font-size: 13px;
     padding-top: 100px;
   }
+  #photo-box .pager{
+    text-align: right;
+  }
 </style>
-<script src="https://unpkg.com/jquery@3.2.1/dist/jquery.min.js"></script>
-<script src="https://unpkg.com/lodash@4.17.4/lodash.min.js"></script>
-<script src="./data.js"></script>
-<script src="./photo.js"></script>
-
-<strong>大图杀猫,谨慎浏览,土豪随意</strong>
-<p>如果无法观看,可能被你的广告拦截给阻止了</p>
+<strong>点击查看原图,因为文件都比较大,请谨慎浏览,耐心等待</strong>
 <hr>
 <div id="photo-box">
+  <p v-if="!loaded">正在加载...<br/>如果长时间无法观看,可能被你的广告拦截给阻止了</p>
+  <span  v-if="loaded" v-for="(photo,index) in photos" :key="index">
+    <h2 v-if="!photos[index - 1] || photos[index - 1].date !== photo.date" v-html="photo.date"></h2>
+    <video preload="meta" v-if="photo.type=='video'" width="35%" controls :src="qnvroot+photo.url"></video> 
+    <a v-else href="javascript:;" class="photo-href">
+      <img :src="qnroot+photo.url+'-sm'" :alt="photo.title+' '+photo.date+' @'+photo.location" :data-target="qnroot+photo.url+'-p'">
+    </a>
+  </span>
+  <p class="pager"><span v-html="'当前第'+page+'页,共'+pageMax+'页'"></span>&nbsp;&nbsp;<button @click="prev" v-if="page!==1">上一页</button>&nbsp;&nbsp;&nbsp;&nbsp;<button v-if="page!==pageMax" @click="next">下一页</button></p>
 </div>
+<script src="https://cdn.staticfile.org/vue/2.2.6/vue.min.js"></script>
+<script src="./photo.js"></script>

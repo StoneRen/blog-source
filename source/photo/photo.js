@@ -1,21 +1,211 @@
-$(function() {
-  photoInit();
-});
+var data = bubbleSort(
+  [
+    /**
+  {
+    date: "201410",
+    title: "跳跃",
+    location: "浙江 乌镇",
+    url: "blog/photo/IMG_7135.JPG"
+  },
+   */
+    {
+      date: "201011",
+      title: "水至清则无鱼",
+      location: "北京 凤凰岭",
+      url: "blog/photo/IMG_2669.jpg"
+    },
+    {
+      date: "201410",
+      title: "zen 喜乐",
+      location: "浙江 乌镇",
+      url: "blog/photo/IMG_7215.JPG"
+    },
+    {
+      date: "201410",
+      title: "zen 喜乐",
+      location: "浙江 乌镇",
+      url: "blog/photo/IMG_7220.JPG"
+    },
+    {
+      date: "201410",
+      title: "忙里偷闲",
+      location: "浙江 乌镇",
+      url: "blog/photo/IMG_7268.JPG"
+    },
+    {
+      date: "201705",
+      title: "窗外",
+      location: "北京",
+      url: "blog/photo/IMG_20170830_162120_702.jpg"
+    },
+    {
+      type: "video",
+      date: "201603",
+      title: "春季踏青",
+      location: "北京 奥利匹克公园",
+      url: "blog/video/5709155670c303439.mp4"
+    },
+    {
+      type: "video",
+      date: "201607",
+      title: "海豚表演",
+      location: "河北 北戴河",
+      url: "blog/video/WeChatSight105.mp4"
+    },
+    {
+      date: "201701",
+      title: "冬日暖炉",
+      location: "山东 泰安",
+      url: "blog/photo/IMG_20170129_121842-01.jpeg"
+    },
+    {
+      date: "201511",
+      title: "小区内深秋景色",
+      location: "北京 万年花城",
+      description: "临时手机抓拍 太模糊了",
+      url: "blog/photo/mmexport1497866593335.jpeg"
+    },
+    {
+      date: "201702",
+      title: "夜晚中的观礼台",
+      location: "北京 奥林匹克广场",
+      url: "blog/photo/IMG_20170228_212604_HHT.jpg"
+    },
+    {
+      date: "201705",
+      title: "初音",
+      location: "日本 秋叶原",
+      url: "blog/photo/IMG_20170810_101928_036.jpg"
+    },
+    {
+      date: "201703",
+      title: "碧波佛香阁",
+      location: "北京 颐和园",
+      url: "blog/photo/IMG_20170312_130523.jpeg"
+    },
+    {
+      date: "201010",
+      title: "草原黄昏",
+      location: "北京 康西草原",
+      url: "blog/photo/cyhh.jpg"
+    },
+    {
+      date: "201008",
+      title: "夏日花花草草",
+      location: "北京 北宫森林公园",
+      url: "blog/photo/flower-in-summer.jpg"
+    },
+    {
+      date: "201104",
+      title: "同事",
+      location: "北京 爨底下",
+      url: "blog/photo/20110423.jpg"
+    },
+    {
+      date: "201009",
+      title: "山间野花",
+      location: "北京 阳台山",
+      url: "blog/photo/201008290001.jpg"
+    },
+    {
+      date: "201708",
+      title: "蓝色天空 (媳妇手机原图)",
+      location: "深圳 大梅沙海滨公园",
+      url: "blog/photo/WechatIMG13304.jpeg"
+    },
+    {
+      date: "201708",
+      title: "摩托",
+      location: "北京",
+      url: "blog/photo/IMG_20170810_101722_002.jpg"
+    },
 
-function photoInit() {
-  var box = $("#photo-box");
-  var html = render();
-  box.html(html);
-}
-
-function render() {
-  var str = "";
-  for (var i = 0, l = data.length; i < l; i++) {
-    var item = data[i];
-    if (!data[i - 1] || data[i - 1].date !== item.date) {
-      str += `<h2>${item.date}</h2>`;
+    {
+      date: "201707",
+      title: "仰望",
+      location: "北京 颐和园",
+      url: "blog/photo/IMG_20170731_170349_748.jpg"
+    },
+    {
+      date: "201703",
+      title: "初春",
+      location: "北京 颐和园",
+      url: "blog/photo/PANO_20170312_132021.jpg"
+    },
+    {
+      date: "201703",
+      title: "苏州街",
+      location: "北京 颐和园",
+      url: "blog/photo/IMG_20170312_104757.jpeg"
+    },
+    {
+      date: "201506",
+      title: "和谐",
+      location: "北京 奥林匹克公园南园",
+      url: "blog/photo/IMG_20170613_104518_049.jpg"
     }
-    str += `<a href="javascript:;"><figure><img src="${qnroot + item.url}-sm" alt="${item.title}  @${item.location} ${item.date}" data-target="${qnroot + item.url}-p"></figure></a>`;
+  ],
+  "date"
+);
+
+/**
+ * 冒泡排序
+ * @param {*} arr 
+ */
+function bubbleSort(arr, attr) {
+  var len = arr.length;
+  for (var i = 0; i < len; i++) {
+    for (var j = 0; j < len - 1 - i; j++) {
+      if (attr) {
+        if (arr[j][attr] < arr[j + 1][attr]) {
+          var temp = arr[j + 1];
+          arr[j + 1] = arr[j];
+          arr[j] = temp;
+        }
+      } else {
+        if (arr[j] < arr[j + 1]) {
+          var temp = arr[j + 1];
+          arr[j + 1] = arr[j];
+          arr[j] = temp;
+        }
+      }
+    }
   }
-  return str;
+  return arr;
 }
+var app = new Vue({
+  el: "#photo-box",
+  data: {
+    pageMax: 1,
+    page: 1,
+    limit: 9,
+    loaded: true,
+    qnvroot: "http://7xi4sn.com1.z0.glb.clouddn.com/",
+    qnroot: "http://ou1djxzjh.bkt.clouddn.com/",
+    photos: []
+  },
+  methods: {
+    render() {
+      var index = (this.page - 1) * this.limit;
+      this.photos = data.slice(index, index + this.limit);
+    },
+    prev() {
+      this.page = this.page - 1;
+      if (this.page < 1) {
+        this.page = 1;
+      }
+      this.render();
+    },
+    next() {
+      this.page = this.page + 1;
+      if (this.page > this.pageMax) {
+        this.page = this.pageMax;
+      }
+      this.render();
+    }
+  },
+  created() {
+    this.pageMax = Math.ceil(data.length / this.limit);
+    this.render();
+  }
+});
