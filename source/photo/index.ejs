@@ -1,8 +1,13 @@
 layout: post 
-slug: "photos" 
+slug: "photo" 
 title: "记录" 
 noDate: "true" 
 ---
+<meta name="keywords" content="photo,颐和园,记录,nodejs,杭州" />
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.2/photoswipe.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.2/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.2/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.2/photoswipe-ui-default.min.js"></script>
 <style>
   #photo-box .photo-href {
     font-size: 16px;
@@ -21,7 +26,6 @@ noDate: "true"
   #photo-box a:hover img {
     transform: scale(1.15);
   }
-
   #photo-box figure {
     margin: 0;
   }
@@ -49,18 +53,55 @@ noDate: "true"
     text-align: right;
   }
 </style>
-<strong>点击查看原图,因为文件都比较大,请谨慎浏览,耐心等待</strong>
-<hr>
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>点击查看原图.翻页进行下一页浏览</p>
 <div id="photo-box">
   <p v-if="!loaded">正在加载...<br/>如果长时间无法观看,可能被你的广告拦截给阻止了</p>
+  <p class="pager"><span v-html="'当前第'+page+'页,共'+pageMax+'页'"></span>&nbsp;&nbsp;<button @click="prev">上一页</button>&nbsp;&nbsp;&nbsp;&nbsp;<button @click="next">下一页</button></p>
   <span  v-if="loaded" v-for="(photo,index) in photos" :key="index">
     <h2 v-if="!photos[index - 1] || photos[index - 1].date !== photo.date" v-html="photo.date"></h2>
     <video preload="meta" v-if="photo.type=='video'" width="35%" controls :src="qnvroot+photo.url"></video> 
-    <a v-else href="javascript:;" class="photo-href">
-      <img :src="qnroot+photo.url+'-sm'" :alt="photo.title+' '+photo.date+' @'+photo.location" :data-target="qnroot+photo.url+'-p'">
+    <a @click="view(photo.index)" v-else href="javascript:;" class="photo-href">
+      <img :src="qnroot+photo.url+'-sm'" :alt="photo.title+' '+photo.date+' @'+photo.location">
     </a>
   </span>
-  <p class="pager"><span v-html="'当前第'+page+'页,共'+pageMax+'页'"></span>&nbsp;&nbsp;<button @click="prev" v-if="page!==1">上一页</button>&nbsp;&nbsp;&nbsp;&nbsp;<button v-if="page!==pageMax" @click="next">下一页</button></p>
+  <p class="pager"><span v-html="'当前第'+page+'页,共'+pageMax+'页'"></span>&nbsp;&nbsp;<button @click="prev">上一页</button>&nbsp;&nbsp;&nbsp;&nbsp;<button @click="next">下一页</button></p>
 </div>
 <script src="https://cdn.staticfile.org/vue/2.2.6/vue.min.js"></script>
 <script src="./photo.js"></script>

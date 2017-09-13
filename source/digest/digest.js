@@ -1,6 +1,7 @@
 var app = new Vue({
   el: "#box",
   data: {
+    dataUrl:"https://raw.githubusercontent.com/StoneRen/digest/master/kindle.txt",
     count:5,
     show: false,
     oData: [],
@@ -17,6 +18,9 @@ var app = new Vue({
         this.oData.splice(index, 1);
       }
       this.read(data);
+    },
+    gotoUrl(){
+      window.open("https://github.com/StoneRen/digest/blob/master/kindle.txt")
     },
     read(data) {
       var self = this;
@@ -46,7 +50,7 @@ var app = new Vue({
       }
     },
     getData() {
-      $.ajax("./kindle.txt")
+      $.ajax(this.dataUrl)
         .then(data => {
           this.show = true;
           var data = data.split("==========");

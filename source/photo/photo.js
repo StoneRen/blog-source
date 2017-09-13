@@ -173,9 +173,35 @@ function bubbleSort(arr, attr) {
   }
   return arr;
 }
+
+var pswpElement;
+var gallery;
+
+function resizeImg(index, item) {
+  if (!item.loaded2) {
+    var img = new Image();
+    img.onload = function() {
+      item.w = this.width;
+      item.h = this.height;
+      try {
+        item.loaded2 = true;
+        gallery.invalidateCurrItems();
+        gallery.updateSize(true);
+      } catch (error) {
+        //console.log(error);
+      }
+    };
+    img.src = item.src;
+  }
+}
+
+PhotoSwipeUI_Default.history = false;
+PhotoSwipeUI_Default.galleryPIDs = false;
+PhotoSwipeUI_Default.bgOpacity = 0.7;
 var app = new Vue({
   el: "#photo-box",
   data: {
+    items: [],
     pageMax: 1,
     page: 1,
     limit: 9,
@@ -185,27 +211,51 @@ var app = new Vue({
     photos: []
   },
   methods: {
+    view(index) {
+      gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, this.items, {
+        index: index
+      });
+      gallery.init();
+      gallery.listen("imageLoadComplete", resizeImg);
+    },
     render() {
       var index = (this.page - 1) * this.limit;
-      this.photos = data.slice(index, index + this.limit);
+      var photos = (this.photos = data.slice(index, index + this.limit));
+      var items = [];
+      for (var i = 0, l = photos.length; i < l; i++) {
+        var photo = photos[i];
+        if (photo.type !== "video") {
+          photo.index = items.length;
+          items.push({
+            title: photo.title + " " + photo.date + " @" + photo.location,
+            src: this.qnroot + photo.url + "-p",
+            w: -1,
+            h: -1
+          });
+        }
+      }
+      this.items = items;
+      //gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, this.items);
+      //gallery.init();
     },
     prev() {
       this.page = this.page - 1;
       if (this.page < 1) {
-        this.page = 1;
+        this.page = this.pageMax;
       }
       this.render();
     },
     next() {
       this.page = this.page + 1;
       if (this.page > this.pageMax) {
-        this.page = this.pageMax;
+        this.page = 1;
       }
       this.render();
     }
   },
   created() {
     this.pageMax = Math.ceil(data.length / this.limit);
+    pswpElement = document.querySelectorAll(".pswp")[0];
     this.render();
   }
 });
