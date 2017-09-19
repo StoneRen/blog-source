@@ -56,7 +56,6 @@ var app = new Vue({
           var data = data.split("==========");
           this.oData = data;
           this.random();
-          //this.read(data);
         })
         .catch(function(err) {
           console.err(err);
