@@ -1,13 +1,30 @@
 var data = bubbleSort(
-  [
-    /**
-  {
-    date: "201410",
-    title: "跳跃",
-    location: "浙江 乌镇",
-    url: "blog/photo/IMG_7135.JPG"
-  },
-   */
+  [{
+    date: "201804",
+    title: "凌晨的十字街头",
+    location: "北京",
+    url: "blog/image/PANO_20180408_011824.jpg"
+  },{
+      date: "201710",
+      title: "夏末秋初",
+      location: "北京 植物园",
+      url: "blog/image/PANO_20171003_155216.jpg"
+    },{
+      date: "201710",
+      title: "夏末秋初",
+      location: "北京 植物园",
+      url: "blog/image/PANO_20171003_154619.jpg"
+    },{
+      date: "201710",
+      title: "夏末秋初",
+      location: "北京 植物园",
+      url: "blog/image/IMG_20171009_205549.jpg"
+    },{
+      date: "201410",
+      title: "跳跃",
+      location: "浙江 乌镇",
+      url: "blog/photo/IMG_7135.JPG"
+    },
     {
       date: "201011",
       title: "水至清则无鱼",
@@ -109,7 +126,7 @@ var data = bubbleSort(
     },
     {
       date: "201708",
-      title: "蓝色天空 (媳妇手机原图)",
+      title: "海滩边 (媳妇手机原图)",
       location: "深圳 大梅沙海滨公园",
       url: "blog/photo/WechatIMG13304.jpeg"
     },
@@ -150,7 +167,7 @@ var data = bubbleSort(
 
 /**
  * 冒泡排序
- * @param {*} arr 
+ * @param {*} arr
  */
 function bubbleSort(arr, attr) {
   var len = arr.length;

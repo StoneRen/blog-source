@@ -11,6 +11,9 @@ noDate: true
     .digest-time {
         font-size: 10px;
     }
+    .article-rect{
+        margin: 5px 0;
+    }
 </style>
 <script src="https://cdn.staticfile.org/vue/2.2.6/vue.min.js"></script>
 <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
@@ -25,15 +28,15 @@ noDate: true
         <button @click="gotoUrl()" v-html="'查看全部书摘('+oData.length+'条)'">全部书摘</button>
     </p>
     <div v-if="show">
-        <div v-for="(item,index) in dData">
+        <div v-for="(item,index) in dData" class="article-rect">
             <h3 v-html="item.title"></h3>
             <span class="digest-time" v-html="item.date"></span>
-            <p v-html="item.content"></p>
+            <blockquote v-html="item.content"></blockquote>
         </div>
         <p>
-                <button @click="random()" v-html="'点击看随机书摘('+count+'条)'"></button> &nbsp;&nbsp;&nbsp;&nbsp;
-                <button onclick="location.href='/digest/kindle.txt'" v-html="'查看全部书摘('+oData.length+'条)'">全部书摘</button>
-            </p>
+            <button @click="random()" v-html="'点击看随机书摘('+count+'条)'"></button> &nbsp;&nbsp;&nbsp;&nbsp;
+            <button @click="gotoUrl()" v-html="'查看全部书摘('+oData.length+'条)'">全部书摘</button>
+        </p>
     </div>
 </div>
 

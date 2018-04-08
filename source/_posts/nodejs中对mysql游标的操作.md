@@ -90,4 +90,4 @@ connection.query('select * from bigdata')
 
 **注意**:上面[gist](https://gist.github.com/StoneRen/b64ff25b43903616ae095dea1961fc8c)实际上是有问题的,自己跑一下试一下,猜一下原因.
 
-<del>有空把完整代码贴出来,稍微给大家解释一下吧.</del> 虽然不知道具体原因,但是问题已经解决,具体看[下文](/2017/08/18/nodejs中对mysql游标的操作/)吧
+<del>有空把完整代码贴出来,稍微给大家解释一下吧.</del> 虽然不知道具体原因,但是问题已经解决,具体看[下文](/archive/nodejs逐条修改mysql数据-下/)吧
