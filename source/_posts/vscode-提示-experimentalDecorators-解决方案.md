@@ -7,7 +7,7 @@ tags: [vscode,js,typescript]
 
 在写typescript的时候,会提示 `experimentalDecorators`
 
-![](http://ou1djxzjh.bkt.clouddn.com/blog/image/experimentalDecorators.jpg-s)
+![](http://s1.jiasucloud.com/blog/image/experimentalDecorators.jpg-s)
 
 解决方案也很简单,就是设置一下`experimentalDecorators`就行.两种方式.
 

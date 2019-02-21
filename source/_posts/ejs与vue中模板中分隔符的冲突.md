@@ -36,7 +36,7 @@ tags: [vue,ejs,delimiters,html,hexo]
 自己感受吧.我的编辑器能正常解析,但是在`hexo`中还是要去解析中间的字符啊.我对你的坚强佩服的五体投地.
 
 ![hexo对字符的坚强解析](	
-http://ou1djxzjh.bkt.clouddn.com/blog/image/WX20170816-201122.png-s)
+http://s1.jiasucloud.com/blog/image/WX20170816-201122.png-s)
 
 <!-- more -->
 ## 原因
@@ -96,6 +96,6 @@ new Vue({
 
 没啥技术含量,单纯记录一下.
 
-![加班是唯一提高工作效率的手段吗?](http://ou1djxzjh.bkt.clouddn.com/blog/image/jiaban.jpeg-s)
+![加班是唯一提高工作效率的手段吗?](http://s1.jiasucloud.com/blog/image/jiaban.jpeg-s)
 
 [vue]: https://cn.vuejs.org

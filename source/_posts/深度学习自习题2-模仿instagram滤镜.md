@@ -19,26 +19,26 @@ tags: [ai,deep learn,synaptic]
 <!--more-->
 ### **instagram Clarendon 滤镜效果:**
 **原图:**
-![](http://ou1djxzjh.bkt.clouddn.com/blog/image/oldpic.jpeg-s) ![](http://ou1djxzjh.bkt.clouddn.com/blog/image/newpic_1.jpeg-s)
+![](http://s1.jiasucloud.com/blog/image/oldpic.jpeg-s) ![](http://s1.jiasucloud.com/blog/image/newpic_1.jpeg-s)
 
 
 **测试图片1:**
-![](http://ou1djxzjh.bkt.clouddn.com/blog/image/original_1.jpg-s) ![](http://ou1djxzjh.bkt.clouddn.com/blog/image/1-1.png-s)
+![](http://s1.jiasucloud.com/blog/image/original_1.jpg-s) ![](http://s1.jiasucloud.com/blog/image/1-1.png-s)
 
 **测试图片2:**
-![](http://ou1djxzjh.bkt.clouddn.com/blog/image/original_2.jpg-s) ![](http://ou1djxzjh.bkt.clouddn.com/blog/image/2-1.png-s)
+![](http://s1.jiasucloud.com/blog/image/original_2.jpg-s) ![](http://s1.jiasucloud.com/blog/image/2-1.png-s)
 
 
 ### **instagram 泛黄滤镜:**
-![](http://ou1djxzjh.bkt.clouddn.com/blog/image/newpic_2.jpeg-s)
+![](http://s1.jiasucloud.com/blog/image/newpic_2.jpeg-s)
 
 训练结果:
-![](http://ou1djxzjh.bkt.clouddn.com/blog/image/2-2.png-s)
+![](http://s1.jiasucloud.com/blog/image/2-2.png-s)
 
 ### **instagram Amaro 滤镜**
-![](http://ou1djxzjh.bkt.clouddn.com/blog/image/newpic_3.jpeg-s)
+![](http://s1.jiasucloud.com/blog/image/newpic_3.jpeg-s)
 训练结果:
-![](http://ou1djxzjh.bkt.clouddn.com/blog/image/1-3.png-s) ![](http://ou1djxzjh.bkt.clouddn.com/blog/image/2-3.png-s)
+![](http://s1.jiasucloud.com/blog/image/1-3.png-s) ![](http://s1.jiasucloud.com/blog/image/2-3.png-s)
 
 
 ## 代码部分

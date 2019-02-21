@@ -5,7 +5,7 @@ tags: [mysql,nodejs,mysqljs,cursor,stream,database]
 ---
 
 [题外]你还记得当年的[游标卡尺](https://baike.baidu.com/item/游标卡尺/2768806?from=jsfun.info)吗?当时我对这玩意的设计者真是极其的佩服
-![游标卡尺](http://ou1djxzjh.bkt.clouddn.com/blog/image/ybkc.jpg-s)
+![游标卡尺](http://s1.jiasucloud.com/blog/image/ybkc.jpg-s)
 
 ## 需求
 
@@ -36,7 +36,7 @@ tags: [mysql,nodejs,mysqljs,cursor,stream,database]
 这个从理论上没有问题,而且实际中运用起来也很有效.当然可以根据实际业务,调整`重试次数`和`增长补偿`
 
 但作为处女座的开发者来说,这个方法有点愚笨.我们来吹毛求疵一下.
-![吹毛求疵](http://ou1djxzjh.bkt.clouddn.com/blog/image/9150e4e5gw1fae0b431b7g204x04x0ul.gif-s)
+![吹毛求疵](http://s1.jiasucloud.com/blog/image/9150e4e5gw1fae0b431b7g204x04x0ul.gif-s)
 
 ## 游标
 
@@ -86,7 +86,7 @@ connection.query('select * from bigdata')
 
 先来20条数据尝尝,图片比较大,慢慢加载.
 
-![demo](http://ou1djxzjh.bkt.clouddn.com/blog/image/Kapture_2017-08-18.gif-s?e3)
+![demo](http://s1.jiasucloud.com/blog/image/Kapture_2017-08-18.gif-s?e3)
 
 **注意**:上面[gist](https://gist.github.com/StoneRen/b64ff25b43903616ae095dea1961fc8c)实际上是有问题的,自己跑一下试一下,猜一下原因.
 

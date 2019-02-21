@@ -8,13 +8,13 @@ tags: [phantomjs,坑,debug,remote-debug]
 
 [phantomjs]基于`webkit`内核,来编译解释执行javascript代码.比如执行批量脚本的时候,不需要浏览器,只需要借助[phantomjs]就可以执行网页中的js代码了.本文基于官网现在的`2.1`版本.
 
-因为官网的文档算是烂到家了,所以本文中的很多问题,估计你都会碰到,并且可能会像我一样抓狂.![抓狂](http://ou1djxzjh.bkt.clouddn.com/blog/image/9150e4e5ly1fg4oyrvkjbg201e01e3yw.gif-s)
+因为官网的文档算是烂到家了,所以本文中的很多问题,估计你都会碰到,并且可能会像我一样抓狂.![抓狂](http://s1.jiasucloud.com/blog/image/9150e4e5ly1fg4oyrvkjbg201e01e3yw.gif-s)
 
 最开始文章标题是`phantomjs简介`,但是在是被肯坏了.下面调试那个坑,你肯定会碰到.
 
 当然,抓狂过后,解决完问题后的那种心情也是只有自己能体会.
 
-![](http://ou1djxzjh.bkt.clouddn.com/blog/image/1fd6e8617007011a041b009067051636.gif-s)
+![](http://s1.jiasucloud.com/blog/image/1fd6e8617007011a041b009067051636.gif-s)
 
 本文包含以下内容: `安装` `示例` `回调`和重点介绍的`调试`部分.
 
@@ -108,7 +108,7 @@ page.onConsoleMessage = function(msg, lineNum, sourceId) {
 };
 ```
 结果如下:
-<img src="http://ou1djxzjh.bkt.clouddn.com/blog/image/phantomjs_console_message.png-s" />
+<img src="http://s1.jiasucloud.com/blog/image/phantomjs_console_message.png-s" />
 
 
 ## 调试
@@ -117,7 +117,7 @@ page.onConsoleMessage = function(msg, lineNum, sourceId) {
 ### 官网的一堆无用的指导
 官网的文档之烂,确实让我刮目相看.比如`page.close`这个文档,简直是绝无仅有,自己[去欣赏一下吧](http://phantomjs.org/api/webpage/method/close.html)
 
-<img src="http://ou1djxzjh.bkt.clouddn.com/blog/image/phantomjs_page_close.png-s" width="60%" >
+<img src="http://s1.jiasucloud.com/blog/image/phantomjs_page_close.png-s" width="60%" >
 
 [phantomjs]最痛苦的地方,就是出错了,你不知道哪里出错了.他不给你提示.
 
@@ -131,7 +131,7 @@ phantom.exit();
 ```
 你执行以下上面的代码,会发现半天没反应,直到你思考完人生后,才恍然大悟,这个代码出错了.
 
-<img src="http://ou1djxzjh.bkt.clouddn.com/blog/image/6af89bc8gw1f8nk1z403aj20cr0b4jrh.jpg-s" />
+<img src="http://s1.jiasucloud.com/blog/image/6af89bc8gw1f8nk1z403aj20cr0b4jrh.jpg-s" />
 
 官网倒是有处理错误的解决办法,如下代码:
 
@@ -192,14 +192,14 @@ phantom.exit();
 `phantomjs --remote-debugger-port=9000  --debug=yes exception.js`
 
 用浏览器打开 `http://127.0.0.1:9000`,看到错误信息,终于露出了微笑的面容了.
-![](http://ou1djxzjh.bkt.clouddn.com/blog/image/smile2.jpg-s)
-<img src="http://ou1djxzjh.bkt.clouddn.com/blog/image/phantomjs_debug_exception.png-s" width="80%" >
+![](http://s1.jiasucloud.com/blog/image/smile2.jpg-s)
+<img src="http://s1.jiasucloud.com/blog/image/phantomjs_debug_exception.png-s" width="80%" >
 
 但是调整代码正常后,你又会发现一个很诡异的问题.程序不执行,没问题,人家说了,你在控制台输入`__run()`进行代码执行.
 
 转了一大圈,幸运的人啊,你发现还是执行不了(老版本的chrome浏览器没问题的,我的是chrome v61).天啊,人生啊.
 
-![](http://ou1djxzjh.bkt.clouddn.com/blog/image/6af89bc8gw1f8pomipgp4j20hs0fg76u.jpg-s)
+![](http://s1.jiasucloud.com/blog/image/6af89bc8gw1f8pomipgp4j20hs0fg76u.jpg-s)
 
 你会发现你输入了 `__run()`,在按回车进行执行的时候,你发现回车之后竟然是`换到下一行`.😤,到底如何执行这个命令啊.不执行命令如何调试啊.
 
@@ -216,7 +216,7 @@ function isEnterKey(event) {
 }
 ```
 当看到这个结果的时候,真的快要哭了
-<img src="http://ou1djxzjh.bkt.clouddn.com/blog/image/phantomjs_cry.png-s">
+<img src="http://s1.jiasucloud.com/blog/image/phantomjs_cry.png-s">
 
 
 [phantomjs]: http://phantomjs.org/

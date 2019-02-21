@@ -12,10 +12,10 @@ tags: [pm2,nodejs,jenkins,forever,热更新]
 `pm2`和`forever`一样,都可以作为nodejs的守护程序,当然不仅仅是`nodejs`.但相对比来说`pm2`的配置和图形化以及插件都做的不错.
 
 `pm2 list`:
-![pm2](http://ou1djxzjh.bkt.clouddn.com/blog/image/pm2-list.png-s)
+![pm2](http://s1.jiasucloud.com/blog/image/pm2-list.png-s)
 <!-- more -->
 `pm2`的控制台,这部分花钱才能使用大部分功能.
-![pm2](http://ou1djxzjh.bkt.clouddn.com/blog/image/pm2-web-ui.gif-s)
+![pm2](http://s1.jiasucloud.com/blog/image/pm2-web-ui.gif-s)
 
 ## 安装
 

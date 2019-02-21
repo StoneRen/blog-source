@@ -223,8 +223,8 @@ var app = new Vue({
     page: 1,
     limit: 9,
     loaded: true,
-    qnvroot: "http://7xi4sn.com1.z0.glb.clouddn.com/",
-    qnroot: "http://ou1djxzjh.bkt.clouddn.com/",
+    qnvroot: "http://s2.jiasucloud.com/",
+    qnroot: "http://s1.jiasucloud.com/",
     photos: []
   },
   methods: {

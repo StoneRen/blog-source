@@ -2,7 +2,7 @@ var app = new Vue({
   el: "#book-box",
   data: {
     loaded: true,
-    qnroot: "http://ou1djxzjh.bkt.clouddn.com/",
+    qnroot: "http://s1.jiasucloud.com/",
     message: "Hello Vue!",
     books: [
       {

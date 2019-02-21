@@ -28,7 +28,7 @@ export default async function getLikes () {
 今后如何?
 
 - `promise` 现在[移动端和桌面浏览器](http://caniuse.com/#feat=promises)以及`nodejs 0.12+` 都可以使用
-![promise in browser](http://ou1djxzjh.bkt.clouddn.com/blog/image/WX20170803-154609.png-p)
+![promise in browser](http://s1.jiasucloud.com/blog/image/WX20170803-154609.png-p)
 - `async`和`await`: `v8` `Edge`和`Firefox`  已经完全支持
 
 
