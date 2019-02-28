@@ -33,10 +33,10 @@ See 'docker --help'.
 
 
 1. 选择docker的配置    
-![docker配置](http://s1.jiasucloud.com/blog/assets/WX20170802-101006.png-s)
+![docker配置](https://ss.jiasucloud.com/blog/assets/WX20170802-101006.png-s)
 
 2. 添加 选定的镜像源   
-![docker 添加镜像地址](http://s1.jiasucloud.com/blog/assets/WX20170802-101059.png-s)
+![docker 添加镜像地址](https://ss.jiasucloud.com/blog/assets/WX20170802-101059.png-s)
 
 3. 重启`docker`
 

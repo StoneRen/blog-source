@@ -19,7 +19,7 @@ tags: [go,newton,map,slice]
 
 >牛顿法是通过选择一个初始点 z 然后重复这一过程求 Sqrt(x) 的近似值:
 
->![newton](http://s1.jiasucloud.com/blog/image/newton.png-s)
+>![newton](https://ss.jiasucloud.com/blog/image/newton.png-s)
 
 我的作业:
 
@@ -87,7 +87,7 @@ func main() {
 ```
 
 我生成的图片如下:
-![pic_1](http://s1.jiasucloud.com/blog/image/go_pic_slice.png-s)  ![pic_2](http://s1.jiasucloud.com/blog/image/go_pic_slice_2.png-s)  ![pic_3](http://s1.jiasucloud.com/blog/image/go_pic_slice_3.png-s)
+![pic_1](https://ss.jiasucloud.com/blog/image/go_pic_slice.png-s)  ![pic_2](https://ss.jiasucloud.com/blog/image/go_pic_slice_2.png-s)  ![pic_3](https://ss.jiasucloud.com/blog/image/go_pic_slice_3.png-s)
 
 去生成自己的图片吧,[go Go GO](https://tour.go-zh.org/moretypes/15)
 

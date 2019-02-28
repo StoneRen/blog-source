@@ -14,7 +14,7 @@ tags: [matrix,矩阵,js,compress,code,压缩]
 
 **题外话**:为啥你的需求总是那么难以捉摸?你要知道基本上所有都是我一个人在整理需求和开发整个技术(前端后端运维)的时,关键还有第三方数据的牵扯,你是不是能稍微理解点了.
 
-![理解](http://s1.jiasucloud.com/blog/image/9150e4e5gw1fatxdztsvqj206o06odge.jpg-s?jpg)
+![理解](https://ss.jiasucloud.com/blog/image/9150e4e5gw1fatxdztsvqj206o06odge.jpg-s?jpg)
 
 ## 分析
 
@@ -70,7 +70,7 @@ tags: [matrix,矩阵,js,compress,code,压缩]
 `23832834` => [`238327`,`34`] 因为`238328`这个数字是能用已有字符表示
 `23832934` => [`23832`,`834`] 因为`238329`这个数字表示不了,只能保留前面的最大数字,由`6位分割`变为`5位分割`,`8`自动分割到下一批,组成了`834`
 也就是说用6位字符表示的最大数字为`238328238328`已经能表示`2万亿`个数字了.这个要远远比上面那个死板的固定位数分割表示强劲的多.字符没增多,突然能表示的数字变的这么多,多神奇啊!!!😯   
-![好神奇啊](http://s1.jiasucloud.com/blog/image/shenqi.jpg-s)
+![好神奇啊](https://ss.jiasucloud.com/blog/image/shenqi.jpg-s)
 
 这个和我们上面说的`需求`中的2`固定位数`冲突吗?
 猛一想冲突了,但其实没有冲突.因为我们还是用2个3字符表示一个数字,也就是说最终一个数字还是靠6个字符表示,没有改变`固定位数`,只是修改了`切割方法`.虽然有点绕,但可以仔细想一想.
@@ -102,10 +102,10 @@ tags: [matrix,矩阵,js,compress,code,压缩]
 **2017-08-07更新:** 这个地方看`意外`这个章节
 
 在我mac下chrome浏览器的测试结果如下:
-![3](http://s1.jiasucloud.com/blog/image/WX20170804-155846.png-s?png)
-![3-2](http://s1.jiasucloud.com/blog/image/WX20170804-155908.png-s?png)
-![4](http://s1.jiasucloud.com/blog/image/WX20170804-155951.png-s?png)
-![5](http://s1.jiasucloud.com/blog/image/WX20170804-160106.png-s?png)
+![3](https://ss.jiasucloud.com/blog/image/WX20170804-155846.png-s?png)
+![3-2](https://ss.jiasucloud.com/blog/image/WX20170804-155908.png-s?png)
+![4](https://ss.jiasucloud.com/blog/image/WX20170804-155951.png-s?png)
+![5](https://ss.jiasucloud.com/blog/image/WX20170804-160106.png-s?png)
 
 4位数字也在几毫秒内
 5位字符能表示`1191640`个数字,查询最后一个数字,耗时为`11ms`,这个结果足够可以了
@@ -123,7 +123,7 @@ tags: [matrix,矩阵,js,compress,code,压缩]
 ## 意外
 
  在[JS Bin demo](http://output.jsbin.com/mogodol) 本身编辑的时候,是可以生成5位字符的编码的.但是我自己在写nodejs程序的时候,一直报内存错误.所以从这里隐约透露出`jsbin`的解释器和浏览器是否不同?
- ![chrome cry](http://s1.jiasucloud.com/blog/image/chrome-cry.png-s)
+ ![chrome cry](https://ss.jiasucloud.com/blog/image/chrome-cry.png-s)
  并且各位也不在再在浏览器中试验生成5位数的压缩方式了,因为同样会报内存溢出.导致浏览器崩溃
  我们在计算一下 `62*62*62*62*62=916132832`9亿多长度的一个数组,在js里是不存在的吧.
 

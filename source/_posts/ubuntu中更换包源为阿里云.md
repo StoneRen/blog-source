@@ -48,17 +48,17 @@ sudo apt update
 ```
 
 效果如下,已经去阿里云镜像查找了.
-![aliyun](http://s1.jiasucloud.com/blog/image/ubuntu-aliyun-apt.png-s)
+![aliyun](https://ss.jiasucloud.com/blog/image/ubuntu-aliyun-apt.png-s)
 
 ## 安装语言包
 
 查看服务器语言包 `locale -a`
 
-![没有中文](http://s1.jiasucloud.com/blog/image/there-is-not-chinese.png-s)
+![没有中文](https://ss.jiasucloud.com/blog/image/there-is-not-chinese.png-s)
 
 安装中文包 `sudo apt install language-pack-zh-hans`
 
-![安装中文](http://s1.jiasucloud.com/blog/image/zh_CN_install.png-s)
+![安装中文](https://ss.jiasucloud.com/blog/image/zh_CN_install.png-s)
 
 查看安装效果 `locale -a`
-![有中文语言包了](http://s1.jiasucloud.com/blog/image/there-is-zh_cn.png-s)
+![有中文语言包了](https://ss.jiasucloud.com/blog/image/there-is-zh_cn.png-s)

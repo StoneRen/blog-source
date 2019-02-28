@@ -28,7 +28,7 @@ export default function getLikes () {
 
 > 无法翻墙的,可以直接看下面的twitter图片
 > (其实看图片 不光是回调判断出现问题,而且明显层进式判断太多了,业务全都揉在一块了-StoneRen注):
-![回调地狱](http://s1.jiasucloud.com/blog/image/Bp1IyS7CYAATIEB.jpg-p)
+![回调地狱](https://ss.jiasucloud.com/blog/image/Bp1IyS7CYAATIEB.jpg-p)
 
 <!-- more -->
 

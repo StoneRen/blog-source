@@ -7,7 +7,7 @@ tags: [mysql,sql,cursor,stream,pipe]
 书接[上文](/archive/nodejs%E4%B8%AD%E5%AF%B9mysql%E6%B8%B8%E6%A0%87%E7%9A%84%E6%93%8D%E4%BD%9C/).
 
 上文中介绍了,针对mysql的逐条数据进行分析.如果你自己真正跑过[gist](https://gist.github.com/StoneRen/b64ff25b43903616ae095dea1961fc8c)上的代码.会发现有问题.
-![多读书](http://s1.jiasucloud.com/blog/image/6af89bc8gw1f8sehf3x4jj20k00k0q7c.jpg-sm)
+![多读书](https://ss.jiasucloud.com/blog/image/6af89bc8gw1f8sehf3x4jj20k00k0q7c.jpg-sm)
 
 
 先把代码列在这里,便于下面讨论.至于为什么要用`stream`,去看上[一篇文章](/archive/nodejs%E4%B8%AD%E5%AF%B9mysql%E6%B8%B8%E6%A0%87%E7%9A%84%E6%93%8D%E4%BD%9C/)吧.

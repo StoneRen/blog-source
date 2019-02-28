@@ -23,11 +23,11 @@ var app = new Vue({
 
 当然中间还有一个用`冒泡排序`对数据进行排序的过程,主要是自己懒的按照时间进行数据排列.所以`懒`才是技术进步的推动力.
 
-![懒](http://s1.jiasucloud.com/blog/image/lan06v05e7v8.gif-s)
+![懒](https://ss.jiasucloud.com/blog/image/lan06v05e7v8.gif-s)
 
 但是记录越添加越多,页面加载和展示倒是没有问题.但是页面元素太多,看的确实烦心.或许是处女座的特点吧,一定要再吹毛求疵一下.
 
-![吹毛求疵](http://s1.jiasucloud.com/blog/image/9150e4e5gw1fae0b431b7g204x04x0ul.gif-s)
+![吹毛求疵](https://ss.jiasucloud.com/blog/image/9150e4e5gw1fae0b431b7g204x04x0ul.gif-s)
 
 本文解决三个问题: `vue分页`,`yilia模板viewer修改`和`photoswipe的图片尺寸自适应`
 
@@ -231,7 +231,7 @@ ok,现在终于图片能自适应了,不论你什么尺寸,我都能完美展示
 
 因为图片比较大,点击之后,图片会进行放大.这个是正常操作,不正常的是,在这个页面中`放大之后不到1秒就又恢复原来尺寸`.这个问题看起来比较恶心,一定也要解决这个问题.
 
-而去掉`imageLoadComplete`之后,放大没有问题,尺寸只适应又出问题了.极力推荐[我用小米手机拍摄的这张图](http://s1.jiasucloud.com/blog/photo/PANO_20170312_132021.jpg-p),没用任何滤镜处理,大自然真是太美了.这还是已经压缩了80%,但是效果还是这么迷人,点击放大后,细节虽然有损失,但绝对很惊艳.
+而去掉`imageLoadComplete`之后,放大没有问题,尺寸只适应又出问题了.极力推荐[我用小米手机拍摄的这张图](https://ss.jiasucloud.com/blog/photo/PANO_20170312_132021.jpg-p),没用任何滤镜处理,大自然真是太美了.这还是已经压缩了80%,但是效果还是这么迷人,点击放大后,细节虽然有损失,但绝对很惊艳.
 
 那就改造一下吧,也很简单:
 

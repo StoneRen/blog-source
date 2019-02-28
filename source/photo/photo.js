@@ -224,7 +224,7 @@ var app = new Vue({
     limit: 9,
     loaded: true,
     qnvroot: "http://s2.jiasucloud.com/",
-    qnroot: "http://s1.jiasucloud.com/",
+    qnroot: "https://ss.jiasucloud.com/",
     photos: []
   },
   methods: {

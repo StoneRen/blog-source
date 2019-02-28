@@ -1,7 +1,7 @@
-layout: post 
-slug: "photo" 
-title: "记录" 
-noDate: "true" 
+layout: post
+slug: "photo"
+title: "记录"
+noDate: "true"
 ---
 <meta name="keywords" content="photo,颐和园,记录,nodejs,杭州" />
 <link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.2/photoswipe.css">
@@ -78,7 +78,7 @@ noDate: "true"
                 </div>
             </div>
             <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
+                <div class="pswp__share-tooltip"></div>
             </div>
             <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
             </button>
@@ -96,7 +96,7 @@ noDate: "true"
   <p class="pager"><span v-html="'当前第'+page+'页,共'+pageMax+'页'"></span>&nbsp;&nbsp;<button @click="prev">上一页</button>&nbsp;&nbsp;&nbsp;&nbsp;<button @click="next">下一页</button></p>
   <span  v-if="loaded" v-for="(photo,index) in photos" :key="index">
     <h2 v-if="!photos[index - 1] || photos[index - 1].date !== photo.date" v-html="photo.date"></h2>
-    <video preload="meta" v-if="photo.type=='video'" width="35%" controls :src="qnvroot+photo.url"></video> 
+    <video preload="meta" v-if="photo.type=='video'" width="35%" controls :src="qnvroot+photo.url"></video>
     <a @click="view(photo.index)" v-else href="javascript:;" class="photo-href">
       <img :src="qnroot+photo.url+'-sm'" :alt="photo.title+' '+photo.date+' @'+photo.location">
     </a>
