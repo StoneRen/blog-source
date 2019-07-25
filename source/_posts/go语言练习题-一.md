@@ -12,14 +12,13 @@ tags: [go,newton,map,slice]
 
 <!--more-->
 
-
 ## 牛顿法求平方根
 
 实验地址: [Go指南-练习：循环和函数](https://tour.go-zh.org/flowcontrol/8)
 
->牛顿法是通过选择一个初始点 z 然后重复这一过程求 Sqrt(x) 的近似值:
+> 牛顿法是通过选择一个初始点 z 然后重复这一过程求 Sqrt(x) 的近似值:
 
->![newton](https://ss.jiasucloud.com/blog/image/newton.png-s)
+> ![newton](https://ss.jiasucloud.com/blog/image/newton.png-s)
 
 我的作业:
 
@@ -27,21 +26,21 @@ tags: [go,newton,map,slice]
 package main
 
 import (
-	"fmt"
-	"math"
+    "fmt"
+    "math"
 )
 
 func Sqrt(x float64) float64 {
-	z :=1.0
-	for count:=0;count<10;count++ {
-		z = z-(z*z-x)/2/z
-	}
-	return z
+    z :=1.0
+    for count:=0;count<10;count++ {
+        z = z-(z*z-x)/2/z
+    }
+    return z
 }
 
 func main() {
-	fmt.Println(Sqrt(2))
-	fmt.Println(math.Sqrt(2))
+    fmt.Println(Sqrt(2))
+    fmt.Println(math.Sqrt(2))
 }
 ```
 
@@ -58,8 +57,8 @@ func main() {
 试验地址: [Go指南-练习：slice](https://tour.go-zh.org/moretypes/15)
 
 要求如下:
-> 实现 `Pic` 。它返回一个长度为 `dy` 的 `slice`，其中每个元素是一个长度为 `dx` 且元素类型为8位无符号整数的 slice。当你运行这个程序时， 它会将每个整数作为对应像素的灰度值（好吧，其实是蓝度）并显示这个 slice 所对应的图像。
 
+> 实现 `Pic` 。它返回一个长度为 `dy` 的 `slice`，其中每个元素是一个长度为 `dx` 且元素类型为8位无符号整数的 slice。当你运行这个程序时， 它会将每个整数作为对应像素的灰度值（好吧，其实是蓝度）并显示这个 slice 所对应的图像。
 
 我的作业如下:
 
@@ -69,20 +68,20 @@ package main
 import "golang.org/x/tour/pic"
 
 func Pic(dx, dy int) [][]uint8 {
-	var blocklist [][]uint8
-	
-	for i:=0;i<dy;i++ {
-		var block []uint8
-		for j:=0;j<dx;j++ {
-			block = append(block,uint8(i*j))
-		}
-		blocklist=append(blocklist,block)
-	}
-	return blocklist
+    var blocklist [][]uint8
+
+    for i:=0;i<dy;i++ {
+        var block []uint8
+        for j:=0;j<dx;j++ {
+            block = append(block,uint8(i*j))
+        }
+        blocklist=append(blocklist,block)
+    }
+    return blocklist
 }
 
 func main() {
-	pic.Show(Pic)
+    pic.Show(Pic)
 }
 ```
 
@@ -91,14 +90,12 @@ func main() {
 
 去生成自己的图片吧,[go Go GO](https://tour.go-zh.org/moretypes/15)
 
-
 ## 统计文章内单词重复次数
-
-
 
 原文如下:[Go指南-练习：map](https://tour.go-zh.org/moretypes/20)
 题目要求:
->实现 WordCount。它应当返回一个含有 s 中每个 “词” 个数的 map。函数 wc.Test 针对这个函数执行一个测试用例，并输出成功还是失败。
+
+> 实现 WordCount。它应当返回一个含有 s 中每个 “词” 个数的 map。函数 wc.Test 针对这个函数执行一个测试用例，并输出成功还是失败。
 
 我的作业如下:
 
@@ -106,30 +103,30 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"strings"
-	"golang.org/x/tour/wc"
+    "fmt"
+    "strings"
+    "golang.org/x/tour/wc"
 )
 
 func WordCount(s string) map[string]int {
-	var strlist []string
-	m := make(map[string]int)
-	strlist = strings.Fields(s)
-	for i := 0; i < len(strlist); i++ {
-		key := strlist[i]
-		ele, ok := m[key]
-		fmt.Printf("%v", ele)
-		if ok {
-			m[key] += 1
-		} else {
-			m[key] = 1
-		}
-	}
-	return m
+    var strlist []string
+    m := make(map[string]int)
+    strlist = strings.Fields(s)
+    for i := 0; i < len(strlist); i++ {
+        key := strlist[i]
+        ele, ok := m[key]
+        fmt.Printf("%v", ele)
+        if ok {
+            m[key] += 1
+        } else {
+            m[key] = 1
+        }
+    }
+    return m
 }
 
 func main() {
-	wc.Test(WordCount)	
+    wc.Test(WordCount)    
 }
 ```
 

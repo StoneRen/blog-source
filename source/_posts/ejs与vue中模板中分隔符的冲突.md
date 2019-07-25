@@ -30,15 +30,17 @@ tags: [vue,ejs,delimiters,html,hexo]
   </div>
 </div>
 ```
+
 很正常的代码,结果其他地方都正常,循环啊,条件判断都很正常.就是简单的`{{`和`}}`类似最简单的地方全都为空,全都无法正常显示.
 
 哎,最终无语了,我都把分隔符分开显示了,竟然`hexo`还是要去给我解析.如果上面那段话你没看明白,去看下面的截图吧.
 自己感受吧.我的编辑器能正常解析,但是在`hexo`中还是要去解析中间的字符啊.我对你的坚强佩服的五体投地.
 
-![hexo对字符的坚强解析](	
+![hexo对字符的坚强解析](    
 https://ss.jiasucloud.com/blog/image/WX20170816-201122.png-s)
 
 <!-- more -->
+
 ## 原因
 
 一开始以为,自己不小心,那个变量写错了.但看了几次都没发现问题.
@@ -52,7 +54,7 @@ FATAL Something's wrong. Maybe you can find the solution here: http://hexo.io/do
 Template render error: (unknown path) [Line 65, Column 8]
   unexpected token: }}
 ```
- 
+
 ## vue解决办法
 
 整套博客系统采用的是`ejs`,那就不要修改了.既然只有几个页面用了[vue],那就直接修改[vue]吧.
@@ -66,6 +68,7 @@ Template render error: (unknown path) [Line 65, Column 8]
 ```html
 <h2 v-if="!books[index - 1] || books[index - 1].date !== book.date">{{ book.date }}</h2>
 ```
+
 变化为
 
 ```html
@@ -80,6 +83,7 @@ Template render error: (unknown path) [Line 65, Column 8]
     <p v-html="book.review"></p>
 </div>
 ```
+
 其实本来不想这样写,但是如果用`v-html`只能这样写了,感觉很别扭不是嘛.
 
 ### 修改vue模板分隔符
@@ -92,6 +96,7 @@ new Vue({
 })
 // 分隔符变成了 ES6 模板字符串的风格
 ```
+
 具体查看[官方解释](https://cn.vuejs.org/v2/api/#delimiters)
 
 没啥技术含量,单纯记录一下.
